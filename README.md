@@ -1,59 +1,76 @@
-# LivrosAngular
+# 📚 Catálogo de Livros com Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+Este projeto é uma aplicação web desenvolvida com Angular que permite visualizar, adicionar e excluir livros de um catálogo simples. Ele foi construído utilizando as **Standalone APIs** do Angular (versão 15+, ou a que você usou), demonstrando a abordagem moderna para desenvolvimento de componentes e roteamento sem a necessidade de módulos `NgModule` explícitos.
 
-## Development server
+## ✨ Funcionalidades
 
-To start a local development server, run:
+* **Listagem de Livros:** Exibe uma tabela com o título, resumo, editora e autores dos livros.
+* **Cadastro de Livros:** Permite adicionar novos livros ao catálogo através de um formulário intuitivo.
+* **Exclusão de Livros:** Possibilita remover livros existentes do catálogo.
+* **Navegação:** Interface simples com navegação entre a lista de livros e o formulário de cadastro.
 
-```bash
-ng serve
-```
+## 🚀 Tecnologias Utilizadas
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+* **Angular CLI:** Ferramenta para iniciar, desenvolver e manter aplicações Angular.
+    * Versão: `Angular CLI 19.2.15` (ou a versão que você usou)
+* **TypeScript:** Linguagem de programação que adiciona tipagem estática ao JavaScript.
+* **HTML5:** Linguagem de marcação para a estrutura da página.
+* **CSS3:** Linguagem de estilo para a aparência da aplicação.
+* **Bootstrap 5.3:** Framework CSS para estilização rápida e responsividade da interface.
+* **Git:** Sistema de controle de versão para gerenciar o histórico do código.
+* **GitHub:** Plataforma para hospedagem do repositório de código.
 
-## Code scaffolding
+## 📂 Estrutura do Projeto (Standalone Components)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+A estrutura segue o padrão Angular com a particularidade de utilizar **Standalone Components**, o que significa que o projeto não possui um arquivo `app.module.ts` principal. As principais configurações e dependências são gerenciadas em:
 
-```bash
-ng generate component component-name
-```
+* `src/app/app.routes.ts`: Define as rotas da aplicação.
+* `src/app/app.config.ts`: Configura os provedores de serviço (como `ControleEditoraService` e `ControleLivrosService`) e o roteamento global.
+* `src/main.ts`: Ponto de entrada da aplicação, responsável pelo bootstrapping do `AppComponent` como um componente standalone.
+* `src/app/controle-editora.service.ts`: Serviço para gerenciar dados das editoras.
+* `src/app/controle-livros.service.ts`: Serviço para gerenciar dados dos livros (obter, incluir, excluir).
+* `src/app/editora.ts`: Classe que define a estrutura de uma editora.
+* `src/app/livro.ts`: Classe que define a estrutura de um livro.
+* `src/app/livro-lista/`: Componente para exibir a lista de livros.
+    * `livro-lista.component.ts` (standalone, importa `CommonModule`)
+    * `livro-lista.component.html`
+* `src/app/livro-dados/`: Componente para o formulário de cadastro de livros.
+    * `livro-dados.component.ts` (standalone, importa `CommonModule`, `FormsModule`)
+    * `livro-dados.component.html`
+* `src/app/app.component.ts`: Componente raiz da aplicação (standalone, importa `CommonModule`, `RouterOutlet`, `RouterLink`).
+* `src/index.html`: Arquivo HTML principal, inclui o Bootstrap CSS.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## ⚙️ Como Rodar o Projeto Localmente
 
-```bash
-ng generate --help
-```
+Para executar esta aplicação em seu ambiente de desenvolvimento, siga os passos abaixo:
 
-## Building
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/EduardoPinheiroS/livros-angular.git](https://github.com/EduardoPinheiroS/livros-angular.git)
+    ```
+2.  **Navegue até a pasta do projeto:**
+    ```bash
+    cd livros-angular
+    ```
+3.  **Instale as dependências:**
+    Certifique-se de ter o Node.js e o Angular CLI instalados. Em seguida, instale as dependências do projeto:
+    ```bash
+    npm install
+    ```
+4.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    ng serve
+    ```
+5.  **Acesse a aplicação:**
+    Abra seu navegador e navegue para `http://localhost:4200/`. A aplicação será recarregada automaticamente se você fizer alguma alteração nos arquivos.
 
-To build the project run:
+## 🤝 Contribuição
 
-```bash
-ng build
-```
+Sinta-se à vontade para explorar o código, sugerir melhorias ou relatar problemas.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Desenvolvido por:** Eduardo Pinheiro dos Santos
+**Disciplina:** Desenvolvimento full stack	
+**Instituição:** Estácio
+**Data:** 18 de Julho de 2025 
