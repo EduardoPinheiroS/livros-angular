@@ -71,6 +71,6 @@ Sinta-se à vontade para explorar o código, sugerir melhorias ou relatar proble
 ---
 
 **Desenvolvido por:** Eduardo Pinheiro dos Santos
-**Disciplina:** Desenvolvimento full stack	
+**Disciplina:** Aprofundamento em Desenvolvimeno Front-end	
 **Instituição:** Estácio
 **Data:** 18 de Julho de 2025 
